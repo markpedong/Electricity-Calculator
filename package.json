@@ -1,0 +1,29 @@
+{
+  "name": "electricity-calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markpedong/Electricity-Calculator.git"
+  },
+  "author": "Mark Jesson Pedong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markpedong/Electricity-Calculator/issues"
+  },
+  "homepage": "https://github.com/markpedong/Electricity-Calculator#readme",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "core-js": "^3.20.3",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.2.1",
+    "parcel": "^2.2.1"
+  }
+}
