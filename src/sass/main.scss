@@ -1,10 +1,12 @@
 // Custom variables
-$info: #f86515;
-$thumbnail-padding: 0.25rem;
+$ulbar-toggler-padding-y: 0.25rem;
+$font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
 
-// Bootstrap Variables
-@import "/node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.logo {
-  width: 5%;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+// .navbar-nav > li > a:hover {
+//   background-color: #fcc;
+// }
