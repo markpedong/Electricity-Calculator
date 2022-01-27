@@ -6,86 +6,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="/src/sass/main.scss" />
+
+    <!-- Bootstrap JavaScript -->
+    <script
+      type="module"
+      src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
+
+    <!-- External Javascript -->
     <script type="module" defer src="/src/js/index.js"></script>
   </head>
-  <body class="bg">
-    <!-- <img src="/src/img/headerBackground.jpg" class="img-fluid" alt="..." /> -->
-
+  <body>
     <!-- Navbar -->
-    <section
-      class="img-fluid"
-      style="
-        background-image: url(/src/img/headerBackground.jpg);
-        background-size: cover;
-        background-position: center;
-      "
-    >
-      <nav class="navbar navbar-dark navbar-expand-lg fixed-top font-monospace ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img
-        src="/src/img/logo.png"
-        alt="logo"
-        width="20"
-        height="20"
-        class="d-inline-block align-items-center mb-1 me-3 ms-4"
-      />Electricity Calculator</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                Electricity Calculator
-              </h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 mt-3 me-4">
-                <li class="nav-item">
-                  <a class="nav-link text-white" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Calculator</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">FAQ</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Contact</a>
-                </li>
-                
-                  </ul>
-                </li>
-              </ul>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top font-monospace">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold me-0 electricity-title" href="#"
+          ><img
+            src="/src/img/logo.png"
+            alt="logo"
+            width="20"
+            height="20"
+            class="d-inline-block align-items-center mb-1 me-1 me-md-2 me-lg-3 ms-md-2 ms-md-4"
+          />Electricity Calculator</a
+        >
+        <button
+          class="navbar-toggler p-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Electricity Calculator
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 mt-3 me-4">
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Calculator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Showcase 1  -->
+    <section>
+      <div
+        class="d-flex justify-content-center align-items-center img-fluid container-fluid"
+        style="
+          background-image: url(/src/img/headerBackground.jpg);
+          background-size: cover;
+          background-position: center;
+          height: 500px;
+        "
+      >
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6">
+            <h1 class="text-white text-start pt-5">
+              Get worry free by calculating the cost of your electricity
+              consumption.
+            </h1>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="bg-dark">
+      <div class="container pt-5">
+        <div
+          class="container-xxl d-flex justify-content-between bg-light border border-5"
+          style="border-radius: 2.25rem !important"
+        >
+          <div class="container">
+            <h1
+              class="fw-bold text-center"
+              style="font-family: 'Nunito', sans-serif"
+            >
+              Devices/ Appliances
+            </h1>
+            <ul class="workouts">
+              <form class="form">
+                <div class="form__row">
+                  <label class="form__label">Type</label>
+                  <select class="form__input form__input--type">
+                    <option value="running">Running</option>
+                    <option value="cycling">Cycling</option>
+                  </select>
+                </div>
+                <div class="form__row">
+                  <label class="form__label">Distance</label>
+                  <input
+                    class="form__input form__input--distance"
+                    placeholder="km"
+                  />
+                </div>
+                <div class="form__row">
+                  <label class="form__label">Duration</label>
+                  <input
+                    class="form__input form__input--duration"
+                    placeholder="min"
+                  />
+                </div>
+
+                <div class="form__row">
+                  <label class="form__label">Cadence</label>
+                  <input
+                    class="form__input form__input--cadence"
+                    placeholder="step/min"
+                  />
+                </div>
+                <div class="form__row form__row--hidden">
+                  <label class="form__label">Elev Gain</label>
+                  <input
+                    class="form__input form__input--elevation"
+                    placeholder="meters"
+                  />
+                </div>
+                <button class="form__btn">OK</button>
+              </form>
+
+              <li class="workout workout--running" data-id="1234567890">
+                <h2 class="workout__title">Running on April 14</h2>
+                <div class="workout__details">
+                  <span class="workout__icon">🏃‍♂️</span>
+                  <span class="workout__value">5.2</span>
+                  <span class="workout__unit">km</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">⏱</span>
+                  <span class="workout__value">24</span>
+                  <span class="workout__unit">min</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">⚡️</span>
+                  <span class="workout__value">4.6</span>
+                  <span class="workout__unit">min/km</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">🦶🏼</span>
+                  <span class="workout__value">178</span>
+                  <span class="workout__unit">spm</span>
+                </div>
+              </li>
+              <li class="workout workout--cycling" data-id="1234567891">
+                <h2 class="workout__title">Cycling on April 5</h2>
+                <div class="workout__details">
+                  <span class="workout__icon">🚴‍♀️</span>
+                  <span class="workout__value">27</span>
+                  <span class="workout__unit">km</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">⏱</span>
+                  <span class="workout__value">95</span>
+                  <span class="workout__unit">min</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">⚡️</span>
+                  <span class="workout__value">16</span>
+                  <span class="workout__unit">km/h</span>
+                </div>
+                <div class="workout__details">
+                  <span class="workout__icon">⛰</span>
+                  <span class="workout__value">223</span>
+                  <span class="workout__unit">m</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="container">
+            <h1
+              class="fw-bold text-center"
+              style="font-family: 'Nunito', sans-serif"
+            >
+              Calculator
+            </h1>
+            <div class="row">
+              <div class="col">1</div>
+              <div class="col">2</div>
+              <div class="col">3</div>
             </div>
           </div>
         </div>
-      </nav>
-      <h1 style="text-align: center">tae</h1>
-      <div style="height: 500px">123</div>
+      </div>
     </section>
-    <div style="height: 1500px">123</div>
-
-    <!-- Showcase -->
   </body>
 
   <!-- BootStrap JavaScript -->
-  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 </html>
