@@ -8,7 +8,7 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 :root {
@@ -70,4 +70,25 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
 
 .device__info {
   background-color: var(--color-dark--3);
+}
+
+.power__control {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--2);
+  transition: all 0.2s;
+}
+
+.power__control:focus {
+  outline-color: var(--color-dark--2);
+  background-color: var(--color-light--2);
+}
+
+.total__value {
+  font-weight: 800;
+}
+
+.power__unit {
+  font-weight: 600;
 }

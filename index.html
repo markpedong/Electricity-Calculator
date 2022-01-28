@@ -123,17 +123,17 @@
               >
                 <span class="pb-2">📱</span>
                 <p
-                  class="fs-1 fw-bold"
+                  class="fs-1 fw-bold text-center"
                   style="font-family: 'Bebas Neue', cursive"
                 >
                   Devices / Appliances
                 </p>
-                <span class="pb-2">📱</span>
+                <span class="pb-2">🖥️</span>
               </div>
 
               <ul class="devices list-unstyled">
                 <form
-                  class="d-grid p-3 p-md-4 bg-dark text-white container form"
+                  class="d-grid p-1 p-md-4 p-lg-2 bg-dark text-white container form"
                   style="
                     font-family: 'Manrope', sans-serif;
                     border-radius: 1rem;
@@ -163,7 +163,7 @@
                 </form>
 
                 <li
-                  class="device__info text-dark mt-5 shadow-sm p-3 mb-5 bg-body d-flex align-items-center text-center"
+                  class="device__info text-dark mt-5 mb-5 p-2 shadow-sm bg-body"
                   style="
                     background-color: rgba(212, 212, 212, 0.747);
                     border-radius: 1rem;
@@ -171,26 +171,123 @@
                     border-left: 10px solid aqua;
                   "
                 >
-                  <h2 class="flex-grow-1 fs-4 fw-bolder mb-0">Computer</h2>
-                  <div class="col device__details fw-bolder">
-                    <span class="device__icon">⚡</span>
-                    <span class="device__value">100</span>
-                    <span class="device__unit">W</span>
-                  </div>
-                  <div class="col device__details fw-bolder">
-                    <span class="device__icon">⏳</span>
-                    <span class="device__value">3</span>
-                    <span class="device__unit">hrs/day</span>
+                  <div
+                    class="container d-flex px-0 p-3 text-end text-sm-center fw-bolder"
+                  >
+                    <p class="mb-0 flex-sm-grow-1">Computer</p>
+                    <div class="col device__details">
+                      <span class="device__icon">⚡</span>
+                      <span class="device__value">100</span>
+                      <span class="device__unit">W</span>
+                    </div>
+                    <div class="col device__details">
+                      <span class="device__icon">⏳</span>
+                      <span class="device__value">3</span>
+                      <span class="device__unit">hr</span>
+                    </div>
                   </div>
                 </li>
               </ul>
             </div>
-            <div class="col">TEST1</div>
+            <div class="col sidebar p-3 p-md-5">
+              <div
+                class="container shadow-lg p-3 mb-5 bg-body bg-dark text-dark"
+                style="border-radius: 1.2rem"
+              >
+                <p
+                  class="fs-1 fw-bold text-center"
+                  style="font-family: 'Bebas Neue', cursive"
+                >
+                  📊Calculator⚡
+                </p>
+                <div class="container">
+                  <div
+                    class="row row-cols-2"
+                    style="font-family: 'Manrope', sans-serif"
+                  >
+                    <div class="col fs-5 fw-bolder pb-5">
+                      <p class="mb-0">Energy Price:</p>
+                    </div>
+                    <div
+                      class="col input-group-sm d-grid pb-5 align-items-center"
+                      style="grid-template-columns: 15% auto auto"
+                    >
+                      <span class="total__icon" style="justify-self: center"
+                        >⚡</span
+                      >
+                      <input
+                        class="power__control"
+                        type="text"
+                        placeholder="₱10.26"
+                        style="
+                          height: fit-content;
+                          width: 100%;
+                          justify-self: center;
+                        "
+                      />
+                      <span class="power__unit text-center px-1">kw / h</span>
+                    </div>
+                    <div class="col">
+                      <p>Total Power consumption:</p>
+                    </div>
+                    <div class="col">
+                      <u>
+                        <span class="total__icon">💪🏻</span>
+                        <span class="total__value">133</span>
+                        <span class="power__unit">kw / h</span>
+                      </u>
+                    </div>
+                    <div class="col">
+                      <p>Total Usage Time:</p>
+                    </div>
+                    <div class="col">
+                      <u>
+                        <span class="total__icon">🕰️</span>
+                        <span class="total__value">12</span>
+                        <span class="power__unit">hrs / day</span>
+                      </u>
+                    </div>
+
+                    <div class="col">
+                      <p>Power Consumed:</p>
+                    </div>
+                    <div class="col">
+                      <u>
+                        <span class="total__icon">🍴</span>
+                        <span class="total__value">1596</span>
+                        <span class="power__unit">w / day</span>
+                      </u>
+                    </div>
+                    <div class="col">
+                      <p>Total Cost:</p>
+                    </div>
+                    <div class="col">
+                      <u>
+                        <span class="total__icon">💵 ₱</span>
+                        <span class="total__value">195</span>
+                        <span class="power__unit"> / day</span>
+                      </u>
+                    </div>
+                    <div class="col">
+                      <p class="fs-5 mb-0 mt-5">Total Cost / Month:</p>
+                    </div>
+                    <div
+                      class="col fs-5 align-self-end"
+                      style="font-weight: 800"
+                    >
+                      <u>
+                        <span class="power__unit">💵 ₱</span>
+                        <span class="total__value">3000</span>
+                        <span class="total__icon"> / day</span>
+                      </u>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </body>
-
-  <!-- BootStrap JavaScript -->
 </html>
