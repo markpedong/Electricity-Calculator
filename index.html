@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <link rel="stylesheet" href="./css/main.min.css" />
 
     <!-- Bootstrap JavaScript -->
     <script
@@ -104,120 +104,45 @@
 
     <!-- Calculator -->
     <section class="bg-dark">
-      <div class="container pt-5">
-        <div
-          class="container-xxl d-flex justify-content-between bg-light border border-5"
-          style="border-radius: 2.25rem !important"
-        >
-          <div class="container">
-            <h1
-              class="fw-bold text-center"
-              style="font-family: 'Nunito', sans-serif"
+      <div class="container bg-light">
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col">
+            <p
+              class="fs-4 text-center"
+              style="font-family: Manrope, sans-serif"
             >
               Devices/ Appliances
-            </h1>
-            <ul class="workouts">
-              <form class="form">
+            </p>
+            <ul class="devices list-unstyled">
+              <form
+                class="d-grid bg-dark text-white rounded-3 form"
+                style="font-family: 'Manrope', sans-serif"
+              >
                 <div class="form__row">
-                  <label class="form__label">Type</label>
-                  <select class="form__input form__input--type">
-                    <option value="running">Running</option>
-                    <option value="cycling">Cycling</option>
-                  </select>
-                </div>
-                <div class="form__row">
-                  <label class="form__label">Distance</label>
+                  <label class="form__label">Device</label>
                   <input
-                    class="form__input form__input--distance"
-                    placeholder="km"
+                    class="form__input form__input--device"
+                    placeholder="Computer"
                   />
                 </div>
                 <div class="form__row">
-                  <label class="form__label">Duration</label>
+                  <label class="form__label">Usage</label>
                   <input
-                    class="form__input form__input--duration"
-                    placeholder="min"
+                    class="form__input form__input--usage"
+                    placeholder="3 hr/day"
                   />
                 </div>
-
                 <div class="form__row">
-                  <label class="form__label">Cadence</label>
+                  <label class="form__label">Power</label>
                   <input
-                    class="form__input form__input--cadence"
-                    placeholder="step/min"
+                    class="form__input form__input--power"
+                    placeholder="100W"
                   />
                 </div>
-                <div class="form__row form__row--hidden">
-                  <label class="form__label">Elev Gain</label>
-                  <input
-                    class="form__input form__input--elevation"
-                    placeholder="meters"
-                  />
-                </div>
-                <button class="form__btn">OK</button>
               </form>
-
-              <li class="workout workout--running" data-id="1234567890">
-                <h2 class="workout__title">Running on April 14</h2>
-                <div class="workout__details">
-                  <span class="workout__icon">🏃‍♂️</span>
-                  <span class="workout__value">5.2</span>
-                  <span class="workout__unit">km</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">⏱</span>
-                  <span class="workout__value">24</span>
-                  <span class="workout__unit">min</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">⚡️</span>
-                  <span class="workout__value">4.6</span>
-                  <span class="workout__unit">min/km</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">🦶🏼</span>
-                  <span class="workout__value">178</span>
-                  <span class="workout__unit">spm</span>
-                </div>
-              </li>
-              <li class="workout workout--cycling" data-id="1234567891">
-                <h2 class="workout__title">Cycling on April 5</h2>
-                <div class="workout__details">
-                  <span class="workout__icon">🚴‍♀️</span>
-                  <span class="workout__value">27</span>
-                  <span class="workout__unit">km</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">⏱</span>
-                  <span class="workout__value">95</span>
-                  <span class="workout__unit">min</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">⚡️</span>
-                  <span class="workout__value">16</span>
-                  <span class="workout__unit">km/h</span>
-                </div>
-                <div class="workout__details">
-                  <span class="workout__icon">⛰</span>
-                  <span class="workout__value">223</span>
-                  <span class="workout__unit">m</span>
-                </div>
-              </li>
             </ul>
           </div>
-          <div class="container">
-            <h1
-              class="fw-bold text-center"
-              style="font-family: 'Nunito', sans-serif"
-            >
-              Calculator
-            </h1>
-            <div class="row">
-              <div class="col">1</div>
-              <div class="col">2</div>
-              <div class="col">3</div>
-            </div>
-          </div>
+          <div class="col">TEST1</div>
         </div>
       </div>
     </section>
