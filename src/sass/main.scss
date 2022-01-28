@@ -10,6 +10,17 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap");
 
+:root {
+  --color-brand--1: #ffb545;
+  --color-brand--2: #00c46a;
+
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ffffff;
+  --color-light--3: rgb(214, 222, 224);
+}
+
 .electricity-title:hover {
   opacity: 50%;
 }
@@ -18,17 +29,44 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
   opacity: 50%;
 }
 
-.full-screen {
-  width: 100vw;
-  max-height: 70vh;
-  min-height: 60vh;
-}
-
 .header-title {
   font-family: "Lato", sans-serif;
   padding-top: 100px;
 }
 
+.sidebar{
+  // padding: 3rem 5rem 4rem 5rem;
+  
 .form {
   grid-template-columns: repeat(2, 1fr);
+  
+  .form__row {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .form__row > input:focus {
+    background-color: var(--color-light--2);
+  }
+
+  .form__label{
+    flex: 0 0 50%;
+    font-weight: 600;
+  }
+  
+  .form__row >  .form__input {
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--color-light--3);
+    transition: all 0.2s;
+  }
+
+  .form__row > .form__input:focus{
+    outline-color: var(--color-dark--2);
+    background-color: var(--color-light--2);
+  }
+}
 }

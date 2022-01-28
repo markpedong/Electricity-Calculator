@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="stylesheet" href="./src/sass/main.scss" />
 
     <!-- Bootstrap JavaScript -->
     <script
@@ -105,35 +105,35 @@
     <!-- Calculator -->
     <section class="bg-dark">
       <div class="container bg-light">
-        <div class="row row-cols-1 row-cols-md-2">
-          <div class="col">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col sidebar p-3 p-md-5">
             <p
-              class="fs-4 text-center"
+              class="fs-4 fw-bold text-center"
               style="font-family: Manrope, sans-serif"
             >
               Devices/ Appliances
             </p>
             <ul class="devices list-unstyled">
               <form
-                class="d-grid bg-dark text-white rounded-3 form"
+                class="d-grid p-3 p-md-4 bg-dark text-white rounded-3 container form"
                 style="font-family: 'Manrope', sans-serif"
               >
-                <div class="form__row">
-                  <label class="form__label">Device</label>
+                <div class="form__row p-1">
+                  <label class="form__label text-center">Device</label>
                   <input
                     class="form__input form__input--device"
                     placeholder="Computer"
                   />
                 </div>
-                <div class="form__row">
-                  <label class="form__label">Usage</label>
+                <div class="form__row p-1">
+                  <label class="form__label text-center">Usage</label>
                   <input
                     class="form__input form__input--usage"
                     placeholder="3 hr/day"
                   />
                 </div>
-                <div class="form__row">
-                  <label class="form__label">Power</label>
+                <div class="form__row p-1">
+                  <label class="form__label text-center">Power</label>
                   <input
                     class="form__input form__input--power"
                     placeholder="100W"
