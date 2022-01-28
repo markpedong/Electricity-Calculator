@@ -103,46 +103,90 @@
     </section>
 
     <!-- Calculator -->
-    <section class="bg-dark">
-      <div class="container bg-light">
-        <div class="row row-cols-1 row-cols-lg-2">
-          <div class="col sidebar p-3 p-md-5">
-            <p
-              class="fs-4 fw-bold text-center"
-              style="font-family: Manrope, sans-serif"
-            >
-              Devices/ Appliances
-            </p>
-            <ul class="devices list-unstyled">
-              <form
-                class="d-grid p-3 p-md-4 bg-dark text-white rounded-3 container form"
-                style="font-family: 'Manrope', sans-serif"
+    <section
+      style="
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(144, 144, 144, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      "
+    >
+      <div class="container py-5">
+        <div class="container bg-light" style="border-radius: 1rem">
+          <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col sidebar p-3 p-md-5">
+              <div
+                class="container d-flex justify-content-center align-items-center"
               >
-                <div class="form__row p-1">
-                  <label class="form__label text-center">Device</label>
-                  <input
-                    class="form__input form__input--device"
-                    placeholder="Computer"
-                  />
-                </div>
-                <div class="form__row p-1">
-                  <label class="form__label text-center">Usage</label>
-                  <input
-                    class="form__input form__input--usage"
-                    placeholder="3 hr/day"
-                  />
-                </div>
-                <div class="form__row p-1">
-                  <label class="form__label text-center">Power</label>
-                  <input
-                    class="form__input form__input--power"
-                    placeholder="100W"
-                  />
-                </div>
-              </form>
-            </ul>
+                <span class="pb-2">📱</span>
+                <p
+                  class="fs-1 fw-bold"
+                  style="font-family: 'Bebas Neue', cursive"
+                >
+                  Devices / Appliances
+                </p>
+                <span class="pb-2">📱</span>
+              </div>
+
+              <ul class="devices list-unstyled">
+                <form
+                  class="d-grid p-3 p-md-4 bg-dark text-white container form"
+                  style="
+                    font-family: 'Manrope', sans-serif;
+                    border-radius: 1rem;
+                  "
+                >
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Device</label>
+                    <input
+                      class="form__input form__input--device"
+                      placeholder="Computer"
+                    />
+                  </div>
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Usage</label>
+                    <input
+                      class="form__input form__input--usage"
+                      placeholder="3 hr/day"
+                    />
+                  </div>
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Power</label>
+                    <input
+                      class="form__input form__input--power"
+                      placeholder="100W"
+                    />
+                  </div>
+                </form>
+
+                <li
+                  class="device__info text-dark mt-5 shadow-sm p-3 mb-5 bg-body d-flex align-items-center text-center"
+                  style="
+                    background-color: rgba(212, 212, 212, 0.747);
+                    border-radius: 1rem;
+                    font-family: 'Manrope', sans-serif;
+                    border-left: 10px solid aqua;
+                  "
+                >
+                  <h2 class="flex-grow-1 fs-4 fw-bolder mb-0">Computer</h2>
+                  <div class="col device__details fw-bolder">
+                    <span class="device__icon">⚡</span>
+                    <span class="device__value">100</span>
+                    <span class="device__unit">W</span>
+                  </div>
+                  <div class="col device__details fw-bolder">
+                    <span class="device__icon">⏳</span>
+                    <span class="device__value">3</span>
+                    <span class="device__unit">hrs/day</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col">TEST1</div>
           </div>
-          <div class="col">TEST1</div>
         </div>
       </div>
     </section>
