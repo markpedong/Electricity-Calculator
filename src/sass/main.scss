@@ -68,27 +68,6 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
   }
 }
 
-.device__info {
-  background-color: var(--color-dark--3);
-}
-
-.power__control {
-  padding: 0.3rem 0.5rem;
-  border: none;
-  border-radius: 3px;
-  background-color: var(--color-light--2);
-  transition: all 0.2s;
-}
-
 .power__control:focus {
-  outline-color: var(--color-dark--2);
-  background-color: var(--color-light--2);
-}
-
-.total__value {
-  font-weight: 800;
-}
-
-.power__unit {
-  font-weight: 600;
+  min-width: 80px;
 }

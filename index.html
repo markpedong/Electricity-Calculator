@@ -86,7 +86,7 @@
           background-image: url(/src/img/headerBackground.jpg);
           background-size: cover;
           background-position: center;
-          height: 500px;
+          height: 100vh;
         "
       >
         <div class="row">
@@ -172,9 +172,10 @@
                   "
                 >
                   <div
-                    class="container d-flex px-0 p-3 text-end text-sm-center fw-bolder"
+                    class="container d-grid px-0 p-3 text-center fw-bolder align-items-center"
+                    style="grid-template-columns: repeat(3, 1fr)"
                   >
-                    <p class="mb-0 flex-sm-grow-1">Computer</p>
+                    <p class="mb-0">Computer</p>
                     <div class="col device__details">
                       <span class="device__icon">⚡</span>
                       <span class="device__value">100</span>
@@ -189,99 +190,90 @@
                 </li>
               </ul>
             </div>
-            <div class="col sidebar p-3 p-md-5">
+            <div class="col p-md-5">
               <div
-                class="container shadow-lg p-3 mb-5 bg-body bg-dark text-dark"
+                class="container shadow-lg p-1 mb-5 bg-body bg-dark text-dark"
                 style="border-radius: 1.2rem"
               >
                 <p
-                  class="fs-1 fw-bold text-center"
+                  class="fs-1 mt-4 fw-bold text-center"
                   style="font-family: 'Bebas Neue', cursive"
                 >
                   📊Calculator⚡
                 </p>
-                <div class="container">
-                  <div
-                    class="row row-cols-2"
-                    style="font-family: 'Manrope', sans-serif"
-                  >
-                    <div class="col fs-5 fw-bolder pb-5">
-                      <p class="mb-0">Energy Price:</p>
-                    </div>
-                    <div
-                      class="col input-group-sm d-grid pb-5 align-items-center"
-                      style="grid-template-columns: 15% auto auto"
-                    >
-                      <span class="total__icon" style="justify-self: center"
-                        >⚡</span
-                      >
-                      <input
-                        class="power__control"
-                        type="text"
-                        placeholder="₱10.26"
-                        style="
-                          height: fit-content;
-                          width: 100%;
-                          justify-self: center;
-                        "
-                      />
-                      <span class="power__unit text-center px-1">kw / h</span>
-                    </div>
-                    <div class="col">
-                      <p>Total Power consumption:</p>
-                    </div>
-                    <div class="col">
-                      <u>
-                        <span class="total__icon">💪🏻</span>
-                        <span class="total__value">133</span>
-                        <span class="power__unit">kw / h</span>
-                      </u>
-                    </div>
-                    <div class="col">
-                      <p>Total Usage Time:</p>
-                    </div>
-                    <div class="col">
-                      <u>
-                        <span class="total__icon">🕰️</span>
-                        <span class="total__value">12</span>
-                        <span class="power__unit">hrs / day</span>
-                      </u>
-                    </div>
 
-                    <div class="col">
-                      <p>Power Consumed:</p>
+                <div
+                  class="container p-0 pb-5 d-grid fs-5 fw-bolder text-nowrap justify-content-center"
+                  style="font-family: 'Manrope', sans-serif"
+                >
+                  <div class="text-center mb-2">Energy Price: ⚡⚡⚡</div>
+                  <div
+                    class="total__container d-grid align-items-center"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="text-end me-3">₱</div>
+                    <div>
+                      <input
+                        class="power__control p-1 text-center"
+                        type="number"
+                        placeholder="10.26"
+                        style="width: 80px"
+                      />
                     </div>
-                    <div class="col">
-                      <u>
-                        <span class="total__icon">🍴</span>
-                        <span class="total__value">1596</span>
-                        <span class="power__unit">w / day</span>
-                      </u>
-                    </div>
-                    <div class="col">
-                      <p>Total Cost:</p>
-                    </div>
-                    <div class="col">
-                      <u>
-                        <span class="total__icon">💵 ₱</span>
-                        <span class="total__value">195</span>
-                        <span class="power__unit"> / day</span>
-                      </u>
-                    </div>
-                    <div class="col">
-                      <p class="fs-5 mb-0 mt-5">Total Cost / Month:</p>
-                    </div>
+                    <div class="text-center ms-1">kw / h</div>
+                  </div>
+                </div>
+
+                <div
+                  class="container d-grid justify-content-center"
+                  style="grid-template-columns: repeat(2 1fr)"
+                >
+                  <div class="container d-flex p-0">
+                    <div class="text-center">Usage Time:</div>
                     <div
-                      class="col fs-5 align-self-end"
-                      style="font-weight: 800"
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 1fr 2fr"
                     >
-                      <u>
-                        <span class="power__unit">💵 ₱</span>
-                        <span class="total__value">3000</span>
-                        <span class="total__icon"> / day</span>
-                      </u>
+                      <div class="text-center text-sm-end total__icon">🕰️</div>
+                      <div class="text-start text-sm-center total__value">
+                        12
+                      </div>
+                      <div class="text-start power__unit">hrs / day</div>
                     </div>
                   </div>
+
+                  <div class="container d-flex p-0">
+                    <div class="text-center">Power Consumption:</div>
+                    <div
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 1fr 2fr"
+                    >
+                      <div class="text-center text-sm-end total__icon">🕰️</div>
+                      <div class="text-start text-sm-center total__value">
+                        12
+                      </div>
+                      <div class="text-start power__unit">hrs / day</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Total Cost for Monthly -->
+              <div
+                class="container p-0 pt-5 mb-4 fs-5 d-grid fw-bold"
+                style="
+                  grid-template-columns: 1fr;
+                  font-family: 'Manrope', sans-serif;
+                  justify-items: center;
+                "
+              >
+                <div class="text-center">Total Cost: Monthly</div>
+                <div
+                  class="d-grid"
+                  style="grid-template-columns: repeat(3, 1fr)"
+                >
+                  <div class="text-end total__icon">₱</div>
+                  <div class="text-center total__value">3000</div>
+                  <div class="power__unit">/ month</div>
                 </div>
               </div>
             </div>
