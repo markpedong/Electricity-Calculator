@@ -104,6 +104,7 @@
 
     <!-- Calculator -->
     <section
+      class="d-grid align-items-center"
       style="
         background: rgb(2, 0, 36);
         background: linear-gradient(
@@ -112,9 +113,12 @@
           rgba(144, 144, 144, 1) 0%,
           rgba(0, 212, 255, 1) 100%
         );
+        height: 100vh;
       "
     >
+      <!-- For Device and Appliances Form / Outer Container-->
       <div class="container py-5">
+        <!-- Inner Container -->
         <div class="container bg-light" style="border-radius: 1rem">
           <div class="row row-cols-1 row-cols-lg-2">
             <div class="col sidebar p-3 p-md-5">
@@ -201,9 +205,8 @@
                 >
                   📊Calculator⚡
                 </p>
-
                 <div
-                  class="container p-0 pb-5 d-grid fs-5 fw-bolder text-nowrap justify-content-center"
+                  class="container pb-5 d-grid fs-5 fw-bolder text-nowrap justify-content-center"
                   style="font-family: 'Manrope', sans-serif"
                 >
                   <div class="text-center mb-2">Energy Price: ⚡⚡⚡</div>
@@ -215,21 +218,30 @@
                     <div>
                       <input
                         class="power__control p-1 text-center"
-                        type="number"
+                        type="text"
                         placeholder="10.26"
                         style="width: 80px"
                       />
                     </div>
-                    <div class="text-center ms-1">kw / h</div>
+                    <div class="text-center ms-1">per kWh</div>
                   </div>
                 </div>
 
+                <!-- Outer Container For Calculator -->
                 <div
-                  class="container d-grid justify-content-center"
-                  style="grid-template-columns: repeat(2 1fr)"
+                  class="container d-grid justify-content-center p-0 gap-3"
+                  style="
+                    grid-template-columns: repeat(2 1fr);
+                    font-family: 'Manrope', sans-serif;
+                  "
                 >
-                  <div class="container d-flex p-0">
-                    <div class="text-center">Usage Time:</div>
+                  <!-- Inner Container For Calculator -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <!-- Daily Usage Time -->
+                    <div class="text-start">Usage Time:</div>
                     <div
                       class="total__container d-grid"
                       style="grid-template-columns: 1fr 1fr 2fr"
@@ -238,42 +250,64 @@
                       <div class="text-start text-sm-center total__value">
                         12
                       </div>
-                      <div class="text-start power__unit">hrs / day</div>
+                      <div class="text-center power__unit">hrs / day</div>
                     </div>
                   </div>
 
-                  <div class="container d-flex p-0">
-                    <div class="text-center">Power Consumption:</div>
+                  <!-- Daily Power Consumption -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <div class="text-start">Power Consumption:</div>
                     <div
                       class="total__container d-grid"
                       style="grid-template-columns: 1fr 1fr 2fr"
                     >
-                      <div class="text-center text-sm-end total__icon">🕰️</div>
+                      <div class="text-center text-sm-end total__icon">⚡</div>
                       <div class="text-start text-sm-center total__value">
-                        12
+                        300
                       </div>
-                      <div class="text-start power__unit">hrs / day</div>
+                      <div class="text-center power__unit">W / day</div>
+                    </div>
+                  </div>
+
+                  <!-- Total cost per DAY -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <div class="text-start">Total Cost:</div>
+                    <div
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 1fr 2fr"
+                    >
+                      <div class="text-center text-sm-end total__icon">💵</div>
+                      <div class="text-start text-sm-center total__value">
+                        ₱195
+                      </div>
+                      <div class="text-center power__unit">/ day</div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Total Cost for Monthly -->
-              <div
-                class="container p-0 pt-5 mb-4 fs-5 d-grid fw-bold"
-                style="
-                  grid-template-columns: 1fr;
-                  font-family: 'Manrope', sans-serif;
-                  justify-items: center;
-                "
-              >
-                <div class="text-center">Total Cost: Monthly</div>
+                <!-- Total Cost for Monthly -->
                 <div
-                  class="d-grid"
-                  style="grid-template-columns: repeat(3, 1fr)"
+                  class="container p-0 pt-5 mb-4 fs-5 d-grid fw-bold"
+                  style="
+                    grid-template-columns: 1fr;
+                    font-family: 'Manrope', sans-serif;
+                    justify-items: center;
+                  "
                 >
-                  <div class="text-end total__icon">₱</div>
-                  <div class="text-center total__value">3000</div>
-                  <div class="power__unit">/ month</div>
+                  <div class="text-center">Total Cost: Monthly</div>
+                  <div
+                    class="d-grid text-center"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="text-center total__icon">₱</div>
+                    <div class="text-start total__value">3000</div>
+                    <div class="power__unit">/ month</div>
+                  </div>
                 </div>
               </div>
             </div>

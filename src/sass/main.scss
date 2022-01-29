@@ -71,3 +71,11 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
 .power__control:focus {
   min-width: 80px;
 }
+
+.total__details::before {
+  content: "";
+}
+
+.total__details::after {
+  content: "";
+}
