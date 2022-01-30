@@ -28,47 +28,69 @@ btnOpen.addEventListener("click", function () {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // CALCULATOR FUNCTION
+
+//
+
+// Device Class
+
+class Device {
+  id = (Date.now() + "").slice(-10);
+  constructor(device, power, usage) {
+    this.device = device;
+    this.power = power;
+    this.usage = usage;
+  }
+}
+
+// Child Class of Device
+
+class Calculator extends Device {
+  constructor(device, power, usage) {
+    super(device, power, usage);
+  }
+}
+
+///////////////////////////////////////
+// APPLICATION ARCHITECTURE
 const form = document.querySelector(".form");
 const devices = document.querySelector(".devices");
 const inputDevice = document.querySelector(".form__input--device");
 const inputUsage = document.querySelector(".form__input--usage");
 const inputPower = document.querySelector(".form__input--power");
 
-console.log(form);
+class App {
+  constructor() {
+    form.addEventListener("submit", this._newDevices.bind(this));
+  }
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  _newDevices(e) {
+    const validInputs = (...inputs) =>
+      inputs.every((inp) => Number.isFinite(inp));
 
-  const deviceValue = inputDevice.value;
-  const usageValue = +inputUsage.value;
-  const powerValue = +inputPower.value;
+    const allPositive = (...inputs) => inputs.every((inp) => inp > 0);
 
-  let html = `
-    <li
-      class="device__info text-dark mb-2 shadow-sm bg-body device__display"
-      style="
-        background-color: rgba(212, 212, 212, 0.747);
-        border-radius: 1rem;
-        font-family: 'Manrope', sans-serif;
-        border-left: 10px solid aqua;
-      "
-    >
-      <div
-        class="container d-grid px-0 p-3 text-center fw-bolder align-items-center"
-        style="grid-template-columns: repeat(3, 1fr)"
-      >
-        <p class="mb-0">${deviceValue}</p>
-        <div class="col device__details">
-          <span class="device__icon">⚡</span>
-          <span class="device__value">${usageValue}</span>
-          <span class="device__unit">W</span>
-        </div>
-        <div class="col device__details">
-          <span class="device__icon">⏳</span>
-          <span class="device__value">${powerValue}</span>
-          <span class="device__unit">hr</span>
-        </div>
-      </div>
-    </li> 
-  `;
-});
+    e.preventDefault();
+
+    // Get the data from form
+    const device = inputDevice.value;
+    const usage = +inputUsage.value;
+    const power = +inputPower.value;
+
+    //create device object
+
+    // Check if data is valid
+    if (!validInputs(usage, power) || !allPositive(usage, power))
+      return alert("Inputs have to be a Positive Number");
+
+    // Add new Object to device array
+
+    // Render device on list
+
+    // Clear input Fields
+    inputDevice.value = inputUsage.value = inputPower.value = "";
+  }
+}
+
+const app = new App();
+
+// form.insertAdjacentHTML("afterend", html);
