@@ -32,50 +32,37 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
   padding-top: 100px;
 }
 
-.sidebar {
-  // padding: 3rem 5rem 4rem 5rem;
+.form__row {
+  display: flex;
+  align-items: center;
+}
 
-  .form {
-    grid-template-columns: repeat(2, 1fr);
+.form__row > input:focus {
+  background-color: var(--color-light--1);
+}
 
-    .form__row {
-      display: flex;
-      align-items: center;
-    }
+.form__label {
+  flex: 0 0 50%;
+  font-weight: 600;
+}
 
-    .form__row > input:focus {
-      background-color: var(--color-light--1);
-    }
-
-    .form__label {
-      flex: 0 0 50%;
-      font-weight: 600;
-    }
-
-    .form__row > .form__input {
-      width: 100%;
-      padding: 0.3rem 0.5rem;
-      border: none;
-      border-radius: 3px;
-      background-color: var(--color-light--2);
-      transition: all 0.2s;
-    }
-
-    .form__row > .form__input:focus {
-      outline-color: var(--color-dark--2);
-      background-color: var(--color-light--2);
-    }
-  }
+.form__row > .form__input {
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--2);
+  transition: all 0.2s;
 }
 
 .power__control:focus {
   min-width: 80px;
 }
 
-.total__details::before {
-  content: "";
+.device__display {
+  display: none;
 }
 
-.total__details::after {
-  content: "";
+.form__btn {
+  display: none;
 }

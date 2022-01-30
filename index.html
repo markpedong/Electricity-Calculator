@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="./src/sass/main.scss" />
+    <link rel="stylesheet" href="/css/main.min.css" />
 
     <!-- Bootstrap JavaScript -->
     <script
       type="module"
+      defer
       src="./node_modules/bootstrap/dist/js/bootstrap.min.js"
     ></script>
 
     <!-- External Javascript -->
-    <script type="module" defer src="/src/js/index.js"></script>
+    <script type="module" defer src="/src/js/app.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -134,11 +135,12 @@
                 </p>
                 <span class="pb-2">🖥️</span>
               </div>
-
               <ul class="devices list-unstyled">
                 <form
-                  class="d-grid p-1 p-md-4 p-lg-2 bg-dark text-white container form"
+                  class="form d-grid mb-4 p-1 p-md-4 p-lg-2 bg-dark text-white container"
                   style="
+                    grid-template-columns: repeat(2, 1fr);
+
                     font-family: 'Manrope', sans-serif;
                     border-radius: 1rem;
                   "
@@ -148,6 +150,7 @@
                     <input
                       class="form__input form__input--device"
                       placeholder="Computer"
+                      type="text"
                     />
                   </div>
                   <div class="form__row p-1">
@@ -155,6 +158,7 @@
                     <input
                       class="form__input form__input--usage"
                       placeholder="3 hr/day"
+                      type="text"
                     />
                   </div>
                   <div class="form__row p-1">
@@ -162,12 +166,13 @@
                     <input
                       class="form__input form__input--power"
                       placeholder="100W"
+                      type="text"
                     />
                   </div>
+                  <button class="form__btn">OK</button>
                 </form>
-
-                <li
-                  class="device__info text-dark mt-5 mb-5 p-2 shadow-sm bg-body"
+                <!-- <li
+                  class="device__info text-dark mb-2 shadow-sm bg-body device__display"
                   style="
                     background-color: rgba(212, 212, 212, 0.747);
                     border-radius: 1rem;
@@ -191,7 +196,7 @@
                       <span class="device__unit">hr</span>
                     </div>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="col p-md-5">
@@ -226,7 +231,6 @@
                     <div class="text-center ms-1">per kWh</div>
                   </div>
                 </div>
-
                 <!-- Outer Container For Calculator -->
                 <div
                   class="container d-grid justify-content-center p-0 gap-3"
@@ -253,7 +257,6 @@
                       <div class="text-center power__unit">hrs / day</div>
                     </div>
                   </div>
-
                   <!-- Daily Power Consumption -->
                   <div
                     class="container d-grid p-0"
