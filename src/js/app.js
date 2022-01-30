@@ -59,6 +59,8 @@ const inputUsage = document.querySelector(".form__input--usage");
 const inputPower = document.querySelector(".form__input--power");
 
 class App {
+  #appliances = [];
+
   constructor() {
     form.addEventListener("submit", this._newDevices.bind(this));
   }
@@ -82,6 +84,9 @@ class App {
     if (!validInputs(usage, power) || !allPositive(usage, power))
       return alert("Inputs have to be a Positive Number");
 
+    const appliance = new Device(device, usage, power);
+    this.#appliances.push(appliance);
+
     // Add new Object to device array
 
     // Render device on list
@@ -94,3 +99,6 @@ class App {
 const app = new App();
 
 // form.insertAdjacentHTML("afterend", html);
+
+//https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649243#content
+//Time Stamp: 18:00
