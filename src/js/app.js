@@ -36,10 +36,10 @@ btnOpen.addEventListener("click", function () {
 class Device {
   date = new Date();
   id = (Date.now() + "").slice(-10);
-  constructor(device, power, usage) {
+  constructor(device, usage, power) {
     this.device = device;
-    this.power = power;
     this.usage = usage;
+    this.power = power;
   }
 
   _setDescription() {
@@ -86,18 +86,12 @@ const inputPower = document.querySelector(".form__input--power");
 const energyPrice = document.querySelector(".power__control");
 const energyForm = document.querySelector(".energy__price");
 
-console.log(energyPrice, energyForm);
-
-energyForm.addEventListener("submit", function () {
-  e.preventDefault();
-  console.log(+energyPrice.value);
-});
-
 class App {
   #appliances = [];
 
   constructor() {
     form.addEventListener("submit", this._newDevices.bind(this));
+    energyForm.addEventListener("submit", this._totalAll.bind(this));
   }
 
   _newDevices(e) {
@@ -121,15 +115,14 @@ class App {
     if (!validInputs(usage, power) || !allPositive(usage, power))
       return alert("Inputs have to be a Positive Number");
 
-    // Add new Object to device array
+    // Add new Object to appliance array
     this.#appliances.push(appliance);
-    console.log(appliance);
 
     // Render device on list
     this._renderDevice(appliance);
 
     // Clear input Fields
-    inputDevice.value = inputUsage.value = inputPower.value = "";
+    inputDevice.value = inputPower.value = inputUsage.value = "";
   }
 
   _renderDevice(appliance) {
@@ -156,15 +149,16 @@ class App {
               ${appliance.device}
             </div>
             <div class="col device__details p-0">
-              <span class="device__icon">⚡</span>
-              <span class="device__value">${appliance.power}</span>
-              <span class="device__unit">W</span>
-            </div>
-            <div class="col device__details p-0">
               <span class="device__icon">⏳</span>
               <span class="device__value">${appliance.usage}</span>
               <span class="device__unit">hr</span>
             </div>
+            <div class="col device__details p-0">
+              <span class="device__icon">⚡</span>
+              <span class="device__value">${appliance.power}</span>
+              <span class="device__unit">W</span>
+            </div>
+           
           </div>
         </div>
       </div>
@@ -172,6 +166,33 @@ class App {
     `;
 
     form.insertAdjacentHTML("afterend", html);
+  }
+
+  _totalAll(appliance) {
+    const validInputs = (...inputs) =>
+      inputs.every((inp) => Number.isFinite(inp));
+
+    const allPositive = (...inputs) => inputs.every((inp) => inp > 0);
+
+    appliance.preventDefault();
+
+    // Getting data from form
+    const energy = +energyPrice.value;
+
+    // Checking if the data is valid
+    if (!validInputs(energy) || !allPositive(energy))
+      return alert("Inputs have to be a Positive Number");
+
+    // Loop over the array and get the total value from the appliances array
+    console.log(this.#appliances);
+    const reduce = this.#appliances.reduce(function (prevEl, curEl) {
+      return prevEl + curEl.power;
+    }, 0);
+
+    console.log(reduce);
+
+    // Clear input Fields
+    energyPrice.value = "";
   }
 }
 
