@@ -177,7 +177,8 @@
                   <button class="form__btn">OK</button>
                 </form>
                 <!-- <li
-                  class="device__info text-dark mb-2 shadow-sm bg-body "
+                  class="device__info text-dark mb-2 shadow-sm bg-body"
+                  data-id="1234567890"
                   style="
                     background-color: rgba(212, 212, 212, 0.747);
                     border-radius: 1rem;
@@ -186,19 +187,27 @@
                   "
                 >
                   <div
-                    class="container d-grid px-0 p-3 text-center fw-bolder align-items-center"
-                    style="grid-template-columns: repeat(3, 1fr)"
+                    class="container px-0 p-3 text-center fw-bolder align-items-center"
                   >
-                    <p class="mb-0">Computer</p>
-                    <div class="col device__details">
-                      <span class="device__icon">⚡</span>
-                      <span class="device__value">100</span>
-                      <span class="device__unit">W</span>
-                    </div>
-                    <div class="col device__details">
-                      <span class="device__icon">⏳</span>
-                      <span class="device__value">3</span>
-                      <span class="device__unit">hr</span>
+                    <div class="row">
+                      <div class="col text-start ps-3 text-sm-center pb-2">
+                        Input on January 14 📅
+                      </div>
+                      <div class="row device__details__container">
+                        <div class="col text-start ps-3 text-sm-center">
+                          Computer
+                        </div>
+                        <div class="col device__details p-0">
+                          <span class="device__icon">⚡</span>
+                          <span class="device__value">100</span>
+                          <span class="device__unit">W</span>
+                        </div>
+                        <div class="col device__details p-0">
+                          <span class="device__icon">⏳</span>
+                          <span class="device__value">3</span>
+                          <span class="device__unit">hr</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </li> -->
@@ -219,20 +228,21 @@
                   class="container pb-5 d-grid fs-5 fw-bolder text-nowrap justify-content-center"
                   style="font-family: 'Manrope', sans-serif"
                 >
-                  <div class="text-center mb-2">Energy Price: ⚡⚡⚡</div>
+                  <div class="text-center mb-2">Energy Price: ⚡</div>
                   <div
                     class="total__container d-grid align-items-center"
                     style="grid-template-columns: repeat(3, 1fr)"
                   >
                     <div class="text-end me-3">₱</div>
-                    <div>
+                    <form class="energy__price">
                       <input
                         class="power__control p-1 text-center"
                         type="text"
                         placeholder="10.26"
                         style="width: 80px"
                       />
-                    </div>
+                      <button class="form__btn">OK</button>
+                    </form>
                     <div class="text-center ms-1">per kWh</div>
                   </div>
                 </div>

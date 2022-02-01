@@ -34,11 +34,36 @@ btnOpen.addEventListener("click", function () {
 // Device Class
 
 class Device {
+  date = new Date();
   id = (Date.now() + "").slice(-10);
   constructor(device, power, usage) {
     this.device = device;
     this.power = power;
     this.usage = usage;
+  }
+
+  _setDescription() {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    this.description = `Input on ${
+      months[this.date.getMonth()]
+    } ${this.date.getDate()} at ${this.date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    })}📅`;
   }
 }
 
@@ -47,6 +72,7 @@ class Device {
 class Calculator extends Device {
   constructor(device, power, usage) {
     super(device, power, usage);
+    this._setDescription();
   }
 }
 
@@ -57,6 +83,15 @@ const devices = document.querySelector(".devices");
 const inputDevice = document.querySelector(".form__input--device");
 const inputUsage = document.querySelector(".form__input--usage");
 const inputPower = document.querySelector(".form__input--power");
+const energyPrice = document.querySelector(".power__control");
+const energyForm = document.querySelector(".energy__price");
+
+console.log(energyPrice, energyForm);
+
+energyForm.addEventListener("submit", function () {
+  e.preventDefault();
+  console.log(+energyPrice.value);
+});
 
 class App {
   #appliances = [];
@@ -77,28 +112,67 @@ class App {
     const device = inputDevice.value;
     const usage = +inputUsage.value;
     const power = +inputPower.value;
+    let appliance;
 
-    //create device object
+    //create appliance object
+    appliance = new Calculator(device, usage, power);
 
     // Check if data is valid
     if (!validInputs(usage, power) || !allPositive(usage, power))
       return alert("Inputs have to be a Positive Number");
 
-    const appliance = new Device(device, usage, power);
-    this.#appliances.push(appliance);
-
     // Add new Object to device array
+    this.#appliances.push(appliance);
+    console.log(appliance);
 
     // Render device on list
+    this._renderDevice(appliance);
 
     // Clear input Fields
     inputDevice.value = inputUsage.value = inputPower.value = "";
   }
+
+  _renderDevice(appliance) {
+    const html = `
+    <li
+    class="device__info text-dark mb-2 shadow-sm bg-body"
+    data-id="${appliance.id}"
+    style="
+      background-color: rgba(212, 212, 212, 0.747);
+      border-radius: 1rem;
+      font-family: 'Manrope', sans-serif;
+      border-left: 10px solid aqua;
+    "
+    >
+      <div
+        class="container px-0 p-3 text-center fw-bolder align-items-center"
+      >
+        <div class="row">
+          <div class="col text-start ps-3 text-sm-center pb-2">
+            ${appliance.description}
+          </div>
+          <div class="row device__details__container">
+            <div class="col text-start ps-3 text-sm-center">
+              ${appliance.device}
+            </div>
+            <div class="col device__details p-0">
+              <span class="device__icon">⚡</span>
+              <span class="device__value">${appliance.power}</span>
+              <span class="device__unit">W</span>
+            </div>
+            <div class="col device__details p-0">
+              <span class="device__icon">⏳</span>
+              <span class="device__value">${appliance.usage}</span>
+              <span class="device__unit">hr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    `;
+
+    form.insertAdjacentHTML("afterend", html);
+  }
 }
 
 const app = new App();
-
-// form.insertAdjacentHTML("afterend", html);
-
-//https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649243#content
-//Time Stamp: 18:00
