@@ -161,8 +161,11 @@ class App {
     this.#totalDetails.push(total);
 
     // Rendering in Total Calculator
-    totalPowerCalc.textContent = totalPower;
     totalUsageCalc.textContent = totalUsage;
+
+    totalPowerCalc.textContent = numeral(totalPower * totalUsage)
+      .format("0.0a")
+      .slice(0, -1);
   }
 
   _renderDevice(appliance) {
