@@ -33,6 +33,13 @@ btnOpen.addEventListener("click", function () {
 
 // Device Class
 
+class Total {
+  constructor(totalPower, totalUsage, energyPrice) {
+    this.totalPower = totalPower;
+    this.totalUsage = totalUsage;
+    this.energyPrice = energyPrice;
+  }
+}
 class Device {
   date = new Date();
   id = (Date.now() + "").slice(-10);
@@ -68,7 +75,6 @@ class Device {
 }
 
 // Child Class of Device
-
 class Calculator extends Device {
   constructor(device, power, usage) {
     super(device, power, usage);
@@ -85,9 +91,10 @@ const inputUsage = document.querySelector(".form__input--usage");
 const inputPower = document.querySelector(".form__input--power");
 const energyPrice = document.querySelector(".power__control");
 const energyForm = document.querySelector(".energy__price");
-
+const energyCalculator = document.querySelector(".energy__calculator");
 class App {
   #appliances = [];
+  #totalDetails = [];
 
   constructor() {
     form.addEventListener("submit", this._newDevices.bind(this));
@@ -178,6 +185,7 @@ class App {
 
     // Getting data from form
     const energy = +energyPrice.value;
+    let total;
 
     // Checking if the data is valid
     if (!validInputs(energy) || !allPositive(energy))
@@ -185,14 +193,107 @@ class App {
 
     // Loop over the array and get the total value from the appliances array
     console.log(this.#appliances);
-    const reduce = this.#appliances.reduce(function (prevEl, curEl) {
+    const totalPower = this.#appliances.reduce(function (prevEl, curEl) {
       return prevEl + curEl.power;
     }, 0);
 
-    console.log(reduce);
+    const totalUsage = this.#appliances.reduce(function (prevEl, curEl) {
+      return prevEl + curEl.usage;
+    }, 0);
+
+    total = new Total(totalPower, totalUsage, energy);
+
+    // Create Total Object
+    console.log(total);
+
+    // Render device on list
+    this._renderTotal(total);
 
     // Clear input Fields
     energyPrice.value = "";
+  }
+
+  _renderTotal(total) {
+    const html = `
+      <div
+      class="container d-grid justify-content-center p-0 gap-3"
+      style="
+        grid-template-columns: repeat(2 1fr);
+        font-family: 'Manrope', sans-serif;
+      "
+        >
+        <!-- Inner Container For Calculator -->
+        <div
+          class="container d-grid p-0"
+          style="grid-template-columns: repeat(2, 1fr)"
+        >
+          <!-- Daily Usage Time -->
+          <div class="text-start">Usage Time:</div>
+          <div
+            class="total__container d-grid"
+            style="grid-template-columns: 1fr 1fr 2fr"
+          >
+            <div class="text-center text-sm-end total__icon">🕰️</div>
+            <div class="text-start text-sm-center total__value">${total.totalUsage}</div>
+            <div class="text-center power__unit">hrs / day</div>
+          </div>
+        </div>
+        <!-- Daily Power Consumption -->
+        <div
+          class="container d-grid p-0"
+          style="grid-template-columns: repeat(2, 1fr)"
+        >
+          <div class="text-start">Power Consumption:</div>
+          <div
+            class="total__container d-grid"
+            style="grid-template-columns: 1fr 1fr 2fr"
+          >
+            <div class="text-center text-sm-end total__icon">⚡</div>
+            <div class="text-start text-sm-center total__value">${total.totalPower}</div>
+            <div class="text-center power__unit">W / day</div>
+          </div>
+        </div>
+
+        <!-- Total cost per DAY -->
+        <div
+          class="container d-grid p-0"
+          style="grid-template-columns: repeat(2, 1fr)"
+        >
+          <div class="text-start">Total Cost:</div>
+          <div
+            class="total__container d-grid"
+            style="grid-template-columns: 1fr 1fr 2fr"
+          >
+            <div class="text-center text-sm-end total__icon">💵</div>
+            <div class="text-start text-sm-center total__value">
+              ₱
+            </div>
+            <div class="text-center power__unit">/ day</div>
+          </div>
+        </div>
+      </div>
+      <!-- Total Cost for Monthly -->
+      <div
+        class="container p-0 pt-5 mb-4 fs-5 d-grid fw-bold"
+        style="
+          grid-template-columns: 1fr;
+          font-family: 'Manrope', sans-serif;
+          justify-items: center;
+        "
+      >
+        <div class="text-center">Total Cost: Monthly</div>
+        <div
+          class="d-grid text-center"
+          style="grid-template-columns: repeat(3, 1fr)"
+        >
+          <div class="text-center total__icon">₱</div>
+          <div class="text-start total__value"></div>
+          <div class="power__unit">/ month</div>
+        </div>
+      </div>
+    `;
+    energyCalculator.insertAdjacentHTML("afterend", html);
+    energyCalculator.removeChild(energyCalculator.childNodes[0]);
   }
 }
 
