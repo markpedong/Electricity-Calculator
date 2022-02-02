@@ -33,6 +33,13 @@ btnOpen.addEventListener("click", function () {
 
 // Device Class
 
+class TotalPerDay {
+  constructor(totalCostPerDay, totalCostPerMonth) {
+    this.totalCostPerDay = totalCostPerDay;
+    this.totalCostPerMonth = totalCostPerMonth;
+  }
+}
+
 class Total {
   constructor(totalUsage, totalPower) {
     this.totalUsage = totalUsage;
@@ -100,6 +107,7 @@ const energyCalculator = document.querySelector(".energy__calculator");
 const totalPowerCalc = document.querySelector(".total__electricity");
 const totalUsageCalc = document.querySelector(".total__usage");
 const pricePerDay = document.querySelector(".price__day");
+const pricePerMonth = document.querySelector(".price__month");
 class App {
   #appliances = [];
   #totalDetails = [];
@@ -185,6 +193,8 @@ class App {
   _calculateTotal(e) {
     e.preventDefault();
 
+    let totalPerDayMonth;
+
     // Get data from form
     const price = +energyPrice.value;
 
@@ -197,7 +207,25 @@ class App {
 
     const totalCostPerMonth = totalCostPerDay * 30;
 
+    // Creating TotalPerDay Object
+    totalPerDayMonth = new TotalPerDay(totalCostPerDay, totalCostPerMonth);
+
+    // Pushing into new Array
+    this.#cost.push(totalPerDayMonth);
+
+    this._renderCost();
+
     //store totalCostPerDay, totalCostPerMonth this into class and make a new function that renders this data into the DOM, Add animation on the DOM, FAQ, Contact
+  }
+
+  _renderCost() {
+    const arrCost = this.#cost;
+
+    const reverseArrCost = arrCost.reverse().shift();
+    const costPerDay = +reverseArrCost.totalCostPerDay;
+    const costPerMonth = +reverseArrCost.totalCostPerMonth;
+    pricePerDay.textContent = `₱ ${costPerDay}`;
+    pricePerMonth.textContent = `${costPerMonth}`;
   }
 
   _renderDevice(appliance) {
