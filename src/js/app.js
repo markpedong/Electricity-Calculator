@@ -39,6 +39,12 @@ class Total {
     this.totalPower = totalPower;
   }
 }
+
+class Consumption {
+  constructor(consumption) {
+    this.consumption = consumption;
+  }
+}
 class Device {
   date = new Date();
   id = (Date.now() + "").slice(-10);
@@ -93,13 +99,16 @@ const energyForm = document.querySelector(".energy__price");
 const energyCalculator = document.querySelector(".energy__calculator");
 const totalPowerCalc = document.querySelector(".total__electricity");
 const totalUsageCalc = document.querySelector(".total__usage");
+const pricePerDay = document.querySelector(".price__day");
 class App {
   #appliances = [];
   #totalDetails = [];
+  #totalkWh = [];
+  #cost = [];
 
   constructor() {
     form.addEventListener("submit", this._newDevices.bind(this));
-    // energyForm.addEventListener("submit", this._totalDevice.bind(this));
+    energyForm.addEventListener("submit", this._calculateTotal.bind(this));
   }
 
   _newDevices(e) {
@@ -144,6 +153,7 @@ class App {
   _totalDevice() {
     // get data from form
     let total;
+    let totalElec;
 
     // Calculatign all Totalvalue
     const totalUsage = this.#appliances.reduce(function (prevEl, curEl) {
@@ -154,18 +164,40 @@ class App {
       return prevEl + curEl.power;
     }, 0);
 
-    //Create Total Object
-    total = new Total(totalUsage, totalPower);
-
-    //Push data to array
-    this.#totalDetails.push(total);
-
     // Rendering in Total Calculator
     totalUsageCalc.textContent = totalUsage;
 
-    totalPowerCalc.textContent = numeral(totalPower * totalUsage)
+    const totalPowerAll = (totalPowerCalc.textContent = numeral(
+      totalPower * totalUsage
+    )
       .format("0.0a")
-      .slice(0, -1);
+      .slice(0, -1));
+
+    //Create Total Object
+    total = new Total(totalUsage, totalPower);
+    totalElec = new Consumption(totalPowerAll);
+
+    //Push data to array
+    this.#totalDetails.push(total);
+    this.#totalkWh.push(totalElec);
+  }
+
+  _calculateTotal(e) {
+    e.preventDefault();
+
+    // Get data from form
+    const price = +energyPrice.value;
+
+    const totalConsumption = this.#totalkWh;
+
+    const reverseTotal = totalConsumption.reverse().shift();
+    const totalkWhPerDay = +reverseTotal.consumption;
+
+    const totalCostPerDay = price * totalkWhPerDay;
+
+    const totalCostPerMonth = totalCostPerDay * 30;
+
+    //store totalCostPerDay, totalCostPerMonth this into class and make a new function that renders this data into the DOM, Add animation on the DOM, FAQ, Contact
   }
 
   _renderDevice(appliance) {
