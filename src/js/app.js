@@ -169,6 +169,10 @@ class App {
     if (!price)
       return alert("Please input Electricity Price. Refer to your bill!");
 
+    // Clear Input Form
+    energyPrice.value = "";
+
+    // Calculation
     const totalConsumption = this.#totalkWh;
 
     const reverseTotal = totalConsumption.reverse().shift();
