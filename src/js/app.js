@@ -120,22 +120,22 @@ class App {
   }
 
   _newDevices(e) {
-    const validInputs = (...inputs) =>
-      inputs.every((inp) => Number.isFinite(inp));
-
-    const allPositive = (...inputs) => inputs.every((inp) => inp > 0);
-
     e.preventDefault();
 
     // Get the data from form
     const device = inputDevice.value;
     const usage = +inputUsage.value;
     const power = +inputPower.value;
+
     let appliance;
 
     /////////////////////////////////////////////////////
     //create appliance object
     appliance = new Calculator(device, usage, power);
+
+    // Guard Clause
+    if (!device) return alert("Please input Device / Appliances Name");
+    if (!usage || !power) return alert("Inputs have to be a Positive Number");
 
     // Add new Objects to array
     this.#appliances.push(appliance);
@@ -147,8 +147,6 @@ class App {
     this._totalDevice();
 
     // Check if data is valid
-    if (!validInputs(usage, power) || !allPositive(usage, power))
-      return alert("Inputs have to be a Positive Number");
 
     // Clear All Inputs
     inputDevice.value =
@@ -198,6 +196,8 @@ class App {
 
     // Get data from form
     const price = +energyPrice.value;
+    if (!price)
+      return alert("Please input Electricity Price. Refer to your bill!");
 
     const totalConsumption = this.#totalkWh;
 
