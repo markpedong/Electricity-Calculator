@@ -1,38 +1,10 @@
 "use strict";
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// NAVIGATION FUNCTION
-const nav = document.querySelector(".navbar");
-const btnOpen = document.querySelector(".navbar-toggler");
-const btnClose = document.querySelector(".btn-close");
-const navLinks = document.querySelectorAll(".nav-link");
-
-const navColorChange = function () {
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 500) {
-      nav.classList.add("bg-dark", "shadow");
-    } else {
-      nav.classList.remove("bg-dark", "shadow");
-    }
-  });
-};
-
-navColorChange();
-
-btnOpen.addEventListener("click", function () {
-  navLinks.forEach((e) => {
-    e.classList.remove("text-white");
-    e.classList.add("text-black");
-  });
-});
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// CALCULATOR FUNCTION
-
-//
+import * as navBar from "./navbarView.js";
+import { DAY_MONTH } from "./config.js";
+import { REDUCE_START } from "./config.js";
 
 // Device Class
-
 class TotalPerDay {
   constructor(totalCostPerDay, totalCostPerMonth) {
     this.totalCostPerDay = totalCostPerDay;
@@ -97,13 +69,11 @@ class Calculator extends Device {
 ///////////////////////////////////////
 // APPLICATION ARCHITECTURE
 const form = document.querySelector(".form");
-const devices = document.querySelector(".devices");
 const inputDevice = document.querySelector(".form__input--device");
 const inputUsage = document.querySelector(".form__input--usage");
 const inputPower = document.querySelector(".form__input--power");
 const energyPrice = document.querySelector(".power__control");
 const energyForm = document.querySelector(".energy__price");
-const energyCalculator = document.querySelector(".energy__calculator");
 const totalPowerCalc = document.querySelector(".total__electricity");
 const totalUsageCalc = document.querySelector(".total__usage");
 const pricePerDay = document.querySelector(".price__day");
@@ -164,11 +134,11 @@ class App {
     // Calculatign all Totalvalue
     const totalUsage = this.#appliances.reduce(function (prevEl, curEl) {
       return prevEl + curEl.usage;
-    }, 0);
+    }, REDUCE_START);
 
     const totalPower = this.#appliances.reduce(function (prevEl, curEl) {
       return prevEl + curEl.power;
-    }, 0);
+    }, REDUCE_START);
 
     // Rendering in Total Calculator
     totalUsageCalc.textContent = totalUsage;
@@ -206,7 +176,7 @@ class App {
 
     const totalCostPerDay = price * totalkWhPerDay;
 
-    const totalCostPerMonth = totalCostPerDay * 30;
+    const totalCostPerMonth = totalCostPerDay * DAY_MONTH;
 
     // Creating TotalPerDay Object
     totalPerDayMonth = new TotalPerDay(totalCostPerDay, totalCostPerMonth);
@@ -226,7 +196,7 @@ class App {
     const costPerDay = +reverseArrCost.totalCostPerDay;
     const costPerMonth = +reverseArrCost.totalCostPerMonth;
     pricePerDay.textContent = `₱ ${costPerDay}`;
-    pricePerMonth.textContent = `${costPerMonth}`;
+    pricePerMonth.textContent = `${numeral(costPerMonth).format("0.00")}`;
   }
 
   _renderDevice(appliance) {
@@ -274,3 +244,9 @@ class App {
 }
 
 const app = new App();
+
+const init = function () {
+  navBar.navColorChange();
+};
+
+init();
