@@ -175,11 +175,12 @@ class App {
     // Rendering in Total Calculator
     totalUsageCalc.textContent = totalUsage;
 
-    const totalPowerAll = (totalPowerCalc.textContent = numeral(
-      totalPower * totalUsage
-    )
-      .format("0.0a")
-      .slice(0, -1));
+    const powerNUsage = totalPower * totalUsage;
+
+    const totalPowerAll = (totalPowerCalc.textContent =
+      numeral(powerNUsage) > 1000
+        ? format("0a").slice(0, -1)
+        : powerNUsage / 1000);
 
     //Create Total Object
     total = new Total(totalUsage, totalPower);

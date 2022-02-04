@@ -1,3 +1,59 @@
-class="form d-grid mb-4 p-1 p-md-4 p-lg-2 bg-dark text-white container" style="
-grid-template-columns: repeat(2, 1fr); font-family: 'Manrope', sans-serif;
-border-radius: 1rem; "
+<div
+  class="container d-grid justify-content-center p-0 gap-3"
+  style="
+    grid-template-columns: repeat(2 1fr);
+    font-family: 'Manrope', sans-serif;
+  "
+>
+  <!-- Inner Container For Calculator -->
+  <div
+    class="container d-grid p-0"
+    style="grid-template-columns: repeat(2, 1fr)"
+  >
+    <!-- Daily Usage Time -->
+    <div class="text-start">Total Usage Time:</div>
+    <div
+      class="total__container d-grid"
+      style="grid-template-columns: 1fr 1fr 2fr"
+    >
+      <div class="text-center text-sm-end total__icon">🕰️</div>
+      <div class="total__usage text-start text-sm-center total__value"></div>
+      <div class="text-center power__unit">hrs / day</div>
+    </div>
+  </div>
+  <!-- Daily Power Consumption -->
+  <div
+    class="container d-grid p-0"
+    style="grid-template-columns: repeat(2, 1fr)"
+  >
+    <div class="text-start">Power Consumption:</div>
+    <div
+      class="total__container d-grid"
+      style="grid-template-columns: 1fr 1fr 2fr"
+    >
+      <div class="text-center text-sm-end total__icon">⚡</div>
+      <div
+        class="total__electricity text-start text-sm-center total__value"
+      ></div>
+      <div class="text-center power__unit">kWh / day</div>
+    </div>
+  </div>
+
+  <!-- Total cost per DAY -->
+  <div
+    class="container d-grid p-0"
+    style="grid-template-columns: repeat(2, 1fr)"
+  >
+    <div class="text-start">Total Cost:</div>
+    <div
+      class="total__container d-grid"
+      style="grid-template-columns: 1fr 1fr 2fr"
+    >
+      <div class="text-center text-sm-end total__icon">💵 ₱</div>
+      <div class="text-start text-sm-center total__value price__day">
+        100,000
+      </div>
+      <div class="text-center power__unit">/ day</div>
+    </div>
+  </div>
+</div>
