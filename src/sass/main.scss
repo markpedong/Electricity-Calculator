@@ -3,6 +3,11 @@
 $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace;
 
+$accordion-button-active-bg: white;
+$accordion-button-active-color: black;
+$accordion-button-focus-box-shadow: black;
+$accordion-border-width: 0px;
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -10,6 +15,7 @@ $font-family-monospace: "Poppins", SFMono-Regular, Menlo, Monaco, Consolas,
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --color-dark--1: #42484d;
