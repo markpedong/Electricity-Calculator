@@ -4,6 +4,7 @@ import * as navBar from "./navbarView.js";
 import { DAY_MONTH } from "./config.js";
 import { REDUCE_START } from "./config.js";
 import * as contactForm from "./contactForm.js";
+import * as animation from "./animation.js";
 
 // Device Class
 class TotalPerDay {
@@ -249,9 +250,3 @@ class App {
 }
 
 const app = new App();
-
-const init = function () {
-  navBar.navColorChange();
-};
-
-init();

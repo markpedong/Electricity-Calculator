@@ -7,6 +7,9 @@
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="/css/main.min.css" />
+    <!-- GSAP ANIMATION -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
     <!-- External Font -->
     <link
       href="//db.onlinewebfonts.com/c/694fc852c21b98bcd2b807168bc8fd94?family=Room"
@@ -32,7 +35,9 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top font-monospace">
+    <nav
+      class="bg-dark navbar navbar-dark navbar-expand-lg fixed-top font-monospace"
+    >
       <div class="container-fluid">
         <a class="navbar-brand fw-bold me-0 electricity-title" href="#"
           ><img
@@ -92,35 +97,23 @@
     </nav>
 
     <!-- Showcase 1  -->
-    <section>
-      <div
-        class="masthead"
-        style="background-image: url('./src/img/headerBackground.jpg')"
-      >
-        <div
-          class="row color-overlay d-flex justify-content-center align-items-center"
-        >
-          <div class="col-1 col-md-2"></div>
-          <div class="col" style="font-family: 'Manrope', sans-serif">
-            <h1
-              style="
-                background-color: rgba(0, 0, 0, 0.2);
-                color: white;
-                text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2);
-              "
-            >
-              Get worry free by calculating the cost of your electricity
-              consumption.
-            </h1>
-          </div>
-          <div class="col-1 col-md-2"></div>
-        </div>
+    <section class="masthead">
+      <div class="imgTextContainer">
+        <img
+          class="headline__img"
+          src="./src/img/headerBackground.jpg"
+          alt="header"
+        />
+        <h1 class="headline">
+          Get worry free by
+          <strong style="font-weight: 700">Calculating the cost</strong> of your
+          electricity consumption.
+        </h1>
       </div>
     </section>
-
     <!-- Calculator -->
     <section
-      class="d-grid align-items-center"
+      class="calculator d-grid align-items-center"
       style="
         background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
       "
@@ -187,40 +180,40 @@
                   <button class="form__btn">OK</button>
                 </form>
                 <!-- <li
-                  class="device__info text-dark mb-2 shadow-sm bg-body"
-                  data-id="1234567890"
-                  style="
-                    background-color: rgba(212, 212, 212, 0.747);
-                    border-radius: 1rem;
-                    font-family: 'Manrope', sans-serif;
-                    border-left: 10px solid aqua;
-                  "
-                >
-                  <div
-                    class="container px-0 p-3 text-center fw-bolder align-items-center"
+                    class="device__info text-dark mb-2 shadow-sm bg-body"
+                    data-id="1234567890"
+                    style="
+                      background-color: rgba(212, 212, 212, 0.747);
+                      border-radius: 1rem;
+                      font-family: 'Manrope', sans-serif;
+                      border-left: 10px solid aqua;
+                    "
                   >
-                    <div class="row">
-                      <div class="col text-start ps-3 text-sm-center pb-2">
-                        Input on January 14 📅
-                      </div>
-                      <div class="row device__details__container">
-                        <div class="col text-start ps-3 text-sm-center">
-                          Computer
+                    <div
+                      class="container px-0 p-3 text-center fw-bolder align-items-center"
+                    >
+                      <div class="row">
+                        <div class="col text-start ps-3 text-sm-center pb-2">
+                          Input on January 14 📅
                         </div>
-                        <div class="col device__details p-0">
-                          <span class="device__icon">⚡</span>
-                          <span class="device__value">100</span>
-                          <span class="device__unit">W</span>
-                        </div>
-                        <div class="col device__details p-0">
-                          <span class="device__icon">⏳</span>
-                          <span class="device__value">3</span>
-                          <span class="device__unit">hr</span>
+                        <div class="row device__details__container">
+                          <div class="col text-start ps-3 text-sm-center">
+                            Computer
+                          </div>
+                          <div class="col device__details p-0">
+                            <span class="device__icon">⚡</span>
+                            <span class="device__value">100</span>
+                            <span class="device__unit">W</span>
+                          </div>
+                          <div class="col device__details p-0">
+                            <span class="device__icon">⏳</span>
+                            <span class="device__value">3</span>
+                            <span class="device__unit">hr</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </li> -->
+                  </li> -->
               </ul>
             </div>
             <div class="col p-md-5">
@@ -421,7 +414,7 @@
                 aria-controls="panelsStayOpen-collapseTwo"
                 style="border-top: 2px solid rgba(0, 0, 0, 0.5)"
               >
-                Why did I make this website?
+                Why did I create this website?
               </button>
             </h2>
             <div

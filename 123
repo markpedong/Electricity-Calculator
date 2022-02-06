@@ -1,93 +1,511 @@
-<div
-  class="d-flex align-items-center justify-content-center container"
-  style="height: 50vh"
->
-  <div
-    class="accordion accordion-flush"
-    style="width: 50vw"
-    id="accordionFlushExample"
-  >
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingOne">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#flush-collapseOne"
-          aria-expanded="false"
-          aria-controls="flush-collapseOne"
+    <!-- Calculator -->
+    <section
+      class="d-grid align-items-center"
+      style="
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+      "
+    >
+      <!-- For Device and Appliances Form / Outer Container-->
+      <div class="container py-5">
+        <!-- Inner Container -->
+        <div
+          class="container bg-light"
+          style="border-radius: 1rem; box-shadow: 10px 10px 10px"
         >
-          Accordion Item #1
-        </button>
-      </h2>
-      <div
-        id="flush-collapseOne"
-        class="accordion-collapse collapse"
-        aria-labelledby="flush-headingOne"
-        data-bs-parent="#accordionFlushExample"
-      >
-        <div class="accordion-body">
-          Placeholder content for this accordion, which is intended to
-          demonstrate the <code>.accordion-flush</code> class. This is the first
-          item's accordion body.
+          <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col sidebar p-3 p-md-5">
+              <div
+                class="container d-flex justify-content-center align-items-center"
+              >
+                <span class="pb-2">📱</span>
+                <p
+                  class="fs-1 fw-bold text-center"
+                  style="font-family: 'Bebas Neue', cursive"
+                >
+                  Devices / Appliances
+                </p>
+                <span class="pb-2">🖥️</span>
+              </div>
+              <ul class="devices list-unstyled">
+                <form
+                  class="form d-grid mb-4 p-1 p-md-4 p-lg-2 bg-dark text-white container"
+                  style="
+                    grid-template-columns: repeat(2, 1fr);
+
+                    font-family: 'Manrope', sans-serif;
+                    border-radius: 1rem;
+                  "
+                >
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Device</label>
+                    <input
+                      class="form__input form__input--device"
+                      placeholder="Computer"
+                      type="text"
+                    />
+                  </div>
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Usage</label>
+                    <input
+                      class="form__input form__input--usage"
+                      type="text"
+                      placeholder="3"
+                    />
+                    <p class="m-0 ms-1">hr</p>
+                  </div>
+
+                  <div class="form__row p-1">
+                    <label class="form__label text-center">Power</label>
+                    <input
+                      class="form__input form__input--power"
+                      placeholder="100"
+                      type="text"
+                    />
+                    <p class="m-0 ms-1">W</p>
+                  </div>
+
+                  <button class="form__btn">OK</button>
+                </form>
+                <!-- <li
+                  class="device__info text-dark mb-2 shadow-sm bg-body"
+                  data-id="1234567890"
+                  style="
+                    background-color: rgba(212, 212, 212, 0.747);
+                    border-radius: 1rem;
+                    font-family: 'Manrope', sans-serif;
+                    border-left: 10px solid aqua;
+                  "
+                >
+                  <div
+                    class="container px-0 p-3 text-center fw-bolder align-items-center"
+                  >
+                    <div class="row">
+                      <div class="col text-start ps-3 text-sm-center pb-2">
+                        Input on January 14 📅
+                      </div>
+                      <div class="row device__details__container">
+                        <div class="col text-start ps-3 text-sm-center">
+                          Computer
+                        </div>
+                        <div class="col device__details p-0">
+                          <span class="device__icon">⚡</span>
+                          <span class="device__value">100</span>
+                          <span class="device__unit">W</span>
+                        </div>
+                        <div class="col device__details p-0">
+                          <span class="device__icon">⏳</span>
+                          <span class="device__value">3</span>
+                          <span class="device__unit">hr</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+            <div class="col p-md-5">
+              <div
+                class="container shadow-lg p-1 mb-5 bg-body bg-dark text-dark"
+                style="border-radius: 1.2rem"
+              >
+                <p
+                  class="fs-1 mt-4 fw-bold text-center"
+                  style="font-family: 'Bebas Neue', cursive"
+                >
+                  📊Calculator⚡
+                </p>
+                <div
+                  class="container pb-5 d-grid fs-5 fw-bolder text-nowrap justify-content-center"
+                  style="font-family: 'Manrope', sans-serif"
+                >
+                  <div class="text-center mb-2">Energy Price: ⚡</div>
+                  <div
+                    class="total__container d-grid align-items-center"
+                    style="grid-template-columns: repeat(3, 1fr)"
+                  >
+                    <div class="text-end me-3">₱</div>
+                    <form class="energy__price">
+                      <input
+                        class="power__control p-1 text-center"
+                        type="text"
+                        placeholder="10.26"
+                        style="width: 80px"
+                      />
+                      <button class="form__btn">OK</button>
+                    </form>
+                    <div class="text-center ms-1">per kWh</div>
+                  </div>
+                </div>
+                <!-- Outer Container For Calculator -->
+                <div
+                  class="container d-grid justify-content-center p-0 gap-3"
+                  style="
+                    grid-template-columns: repeat(2 1fr);
+                    font-family: 'Manrope', sans-serif;
+                  "
+                >
+                  <!-- Inner Container For Calculator -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <!-- Daily Usage Time -->
+                    <div class="text-start">Total Usage Time:</div>
+                    <div
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 2fr 2fr"
+                    >
+                      <div class="text-center text-sm-end total__icon">🕰️</div>
+                      <div
+                        class="total__usage text-start text-sm-center total__value"
+                      ></div>
+                      <div class="text-center power__unit">hrs / day</div>
+                    </div>
+                  </div>
+                  <!-- Daily Power Consumption -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <div class="text-start">Power Consumption:</div>
+                    <div
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 2fr 2fr"
+                    >
+                      <div class="text-center text-sm-end total__icon">⚡</div>
+                      <div
+                        class="total__electricity text-start text-sm-center total__value"
+                      ></div>
+                      <div class="text-center power__unit">kWh / day</div>
+                    </div>
+                  </div>
+
+                  <!-- Total cost per DAY -->
+                  <div
+                    class="container d-grid p-0"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                  >
+                    <div class="text-start">Total Cost:</div>
+                    <div
+                      class="total__container d-grid"
+                      style="grid-template-columns: 1fr 2fr 2fr"
+                    >
+                      <div class="text-center text-sm-end total__icon">💵</div>
+                      <div
+                        class="text-start text-sm-center total__value price__day"
+                      ></div>
+                      <div class="text-center power__unit">/ day</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Total Cost for Monthly -->
+                <div
+                  class="container p-0 pt-5 mb-4 fs-5 d-grid fw-bold"
+                  style="
+                    grid-template-columns: 1fr;
+                    font-family: 'Manrope', sans-serif;
+                    justify-items: center;
+                  "
+                >
+                  <div class="text-center">Total Cost: Monthly</div>
+                  <div
+                    class="d-grid text-center"
+                    style="grid-template-columns: 1fr 2fr 2fr"
+                  >
+                    <div class="text-center total__icon">₱</div>
+                    <div class="text-start total__value price__month"></div>
+                    <div class="power__unit">/ month</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingTwo">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#flush-collapseTwo"
-          aria-expanded="false"
-          aria-controls="flush-collapseTwo"
-        >
-          Accordion Item #2
-        </button>
-      </h2>
+    </section>
+
+    <!-- FAQ -->
+    <section
+      class="d-grid justify-content-center align-items-center"
+      style="
+        background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+        height: 100vh;
+      "
+    >
       <div
-        id="flush-collapseTwo"
-        class="accordion-collapse collapse"
-        aria-labelledby="flush-headingTwo"
-        data-bs-parent="#accordionFlushExample"
+        class="container p-2 p-sm-5"
+        style="
+          background-color: white;
+          border-radius: 20px;
+          box-shadow: 10px 10px 10px;
+          width: 100vw;
+        "
       >
-        <div class="accordion-body">
-          Placeholder content for this accordion, which is intended to
-          demonstrate the <code>.accordion-flush</code> class. This is the
-          second item's accordion body. Let's imagine this being filled with
-          some actual content.
+        <div
+          class="text-uppercase text-center"
+          style="font-family: 'Rubik', sans-serif"
+        >
+          <p
+            class="opacity-50 pt-1"
+            style="
+              font-weight: 600;
+              font-family: 'Poppins', sans-serif;
+              letter-spacing: 5px;
+            "
+          >
+            Electricity Calculator
+          </p>
+          <p class="fs-3" style="font-weight: 800; letter-spacing: 2px">
+            Frequently Asked Question
+          </p>
+        </div>
+        <div
+          class="accordion font-monospace p-sm-5"
+          id="accordionPanelsStayOpenExample"
+        >
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button
+                class="accordion-button fw-bolder"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne"
+                aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne"
+                style="border-top: 2px solid rgba(0, 0, 0, 0.5)"
+              >
+                Is this free?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne"
+            >
+              <div class="accordion-body">
+                <strong>Yes!</strong> Since I want to provide comfort to every
+                people who doesn't have time to
+                <strong>compute their electricity </strong> and doesn't know how
+                to compute it!.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button
+                class="accordion-button collapsed fw-bolder"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo"
+                style="border-top: 2px solid rgba(0, 0, 0, 0.5)"
+              >
+                Why did I create this website?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo"
+            >
+              <div class="accordion-body">
+                Because I want to be able to gain more knowledge and experience
+                in making this kind of website and so that I could make this as
+                a project for my portfolio.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button
+                class="accordion-button collapsed fw-bolder accordion__3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree"
+                aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree"
+                style="
+                  border-top: 2px solid rgba(0, 0, 0, 0.5);
+                  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+                "
+              >
+                What is Tech Stack I used for this Project?
+              </button>
+            </h2>
+            <div
+              id="panelsStayOpen-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingThree"
+            >
+              <div
+                class="accordion-body"
+                style="border-bottom: 2px solid rgba(0, 0, 0, 0.5)"
+              >
+                I only used HTML,CSS and JavaScript and used a CSS Framework
+                called Bootstrap 5.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#flush-collapseThree"
-          aria-expanded="false"
-          aria-controls="flush-collapseThree"
+    </section>
+
+    <!-- Contact Form -->
+    <section
+      class="d-grid align-items-center"
+      style="
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+      "
+    >
+      <!-- Container Form-->
+      <div class="container py-5">
+        <!-- Inner Container -->
+        <div
+          class="container bg-light"
+          style="
+            border-radius: 1rem;
+            box-shadow: 10px 10px 10px;
+            max-width: 600px;
+          "
         >
-          Accordion Item #3
-        </button>
-      </h2>
-      <div
-        id="flush-collapseThree"
-        class="accordion-collapse collapse"
-        aria-labelledby="flush-headingThree"
-        data-bs-parent="#accordionFlushExample"
-      >
-        <div class="accordion-body">
-          Placeholder content for this accordion, which is intended to
-          demonstrate the <code>.accordion-flush</code> class. This is the third
-          item's accordion body. Nothing more exciting happening here in terms
-          of content, but just filling up the space to make it look, at least at
-          first glance, a bit more representative of how this would look in a
-          real-world application.
+          <form
+            onsubmit="sendEmail(); reset(); return false;"
+            class="contact__form d-flex flex-column p-2 py-5 p-sm-5 rounded-3"
+          >
+            <div
+              class="text-uppercase text-center"
+              style="font-family: 'Rubik', sans-serif"
+            >
+              <p
+                class="opacity-50 pt-1"
+                style="
+                  font-weight: 600;
+                  font-family: 'Poppins', sans-serif;
+                  letter-spacing: 5px;
+                "
+              >
+                Electricity Calculator
+              </p>
+              <p class="fs-3" style="font-weight: 800; letter-spacing: 2px">
+                Get in touch
+              </p>
+            </div>
+            <input
+              class="input__contact"
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <input
+              class="input__contact"
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Email id"
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <input
+              class="input__contact"
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Phone no."
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <textarea
+              class="input__contact"
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="How can I help you?"
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            ></textarea>
+            <button
+              class="contact__button"
+              style="
+                padding: 15px;
+                background-image: linear-gradient(
+                  to right,
+                  #f78ca0 0%,
+                  #f9748f 19%,
+                  #fd868c 60%,
+                  #fe9a8b 100%
+                );
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-weight: 800;
+                font-size: 18px;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                border-radius: 10px;
+                width: 150px;
+                margin: 20px auto 0;
+              "
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>

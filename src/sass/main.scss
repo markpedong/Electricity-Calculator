@@ -25,24 +25,63 @@ $accordion-border-width: 0px;
   --color-light--2: rgb(214, 222, 224);
 }
 
+.electricity-title {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+
 .electricity-title:hover {
   opacity: 50%;
 }
-
+.nav-link {
+  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
 .nav-link:hover {
   opacity: 50%;
 }
 
 .masthead {
-  background-size: cover;
-  min-height: 100vh;
-  position: relative;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 
-  .color-overlay {
-    position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .imgTextContainer {
+    height: 60%;
     width: 100%;
-    height: 100%;
+    position: relative;
+
+    .headline {
+      z-index: 3;
+      position: absolute;
+      top: 40%;
+      bottom: 60%;
+      left: 25%;
+      right: 25%;
+      color: white;
+      text-shadow: 10px 10px 10px rgb(0, 0, 0);
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+
+    .headline__img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
+}
+
+.imgTextContainer::after {
+  content: "";
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
 
 .form__row {
