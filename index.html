@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="/src/sass/main.scss" />
+    <link rel="stylesheet" href="/css/main.min.css" />
     <!-- External Font -->
     <link
       href="//db.onlinewebfonts.com/c/694fc852c21b98bcd2b807168bc8fd94?family=Room"
@@ -125,7 +125,10 @@
       <!-- For Device and Appliances Form / Outer Container-->
       <div class="container py-5">
         <!-- Inner Container -->
-        <div class="container bg-light" style="border-radius: 1rem">
+        <div
+          class="container bg-light"
+          style="border-radius: 1rem; box-shadow: 10px 10px 10px"
+        >
           <div class="row row-cols-1 row-cols-lg-2">
             <div class="col sidebar p-3 p-md-5">
               <div
@@ -479,6 +482,183 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section
+      class="d-grid align-items-center"
+      style="
+        background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+      "
+    >
+      <!-- Container Form-->
+      <div class="container py-5">
+        <!-- Inner Container -->
+        <div
+          class="container bg-light"
+          style="
+            border-radius: 1rem;
+            box-shadow: 10px 10px 10px;
+            max-width: 600px;
+          "
+        >
+          <form
+            onsubmit="sendEmail(); reset(); return false;"
+            class="contact__form d-flex flex-column p-2 py-5 p-sm-5 rounded-3"
+          >
+            <div
+              class="text-uppercase text-center"
+              style="font-family: 'Rubik', sans-serif"
+            >
+              <p
+                class="opacity-50 pt-1"
+                style="
+                  font-weight: 600;
+                  font-family: 'Poppins', sans-serif;
+                  letter-spacing: 5px;
+                "
+              >
+                Electricity Calculator
+              </p>
+              <p class="fs-3" style="font-weight: 800; letter-spacing: 2px">
+                Get in touch
+              </p>
+            </div>
+            <input
+              class="input__contact"
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <input
+              class="input__contact"
+              type="email"
+              id="email"
+              placeholder="Email id"
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <input
+              class="input__contact"
+              type="text"
+              id="phone"
+              placeholder="Phone no."
+              required
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            />
+            <textarea
+              class="textarea__contact"
+              id="message"
+              rows="4"
+              placeholder="How can I help you?"
+              style="
+                border: 0;
+                margin: 10px 0;
+                padding: 20px;
+                outline: none;
+                background-image: linear-gradient(
+                  to top,
+                  #e6e9f0 0%,
+                  #eef1f5 100%
+                );
+                font-size: 16px;
+                font-family: 'Rubik', sans-serif;
+                border-radius: 10px;
+              "
+            ></textarea>
+            <button
+              style="
+                padding: 15px;
+                background-image: linear-gradient(
+                  to right,
+                  #f78ca0 0%,
+                  #f9748f 19%,
+                  #fd868c 60%,
+                  #fe9a8b 100%
+                );
+                color: #fff;
+                font-family: 'Poppins', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                font-weight: 800;
+                font-size: 18px;
+                border: 0;
+                outline: none;
+                cursor: pointer;
+                border-radius: 10px;
+                width: 150px;
+                margin: 20px auto 0;
+              "
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
+          <script src="https://smtpjs.com/v3/smtp.js"></script>
+          <script>
+            function sendEmail() {
+              Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "portfolioEmail01@gmail.com",
+                Password: "FFF8CBF9AEFF30814FB290FFA836207DA7B3",
+                To: "mark.pedong01@gmail.com",
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Enquiry",
+                Body:
+                  "Name: " +
+                  document.getElementById("name").value +
+                  "<br> Email: " +
+                  document.getElementById("email").value +
+                  "<br> Phone no: " +
+                  document.getElementById("phone").value +
+                  "<br> Message: " +
+                  document.getElementById("message").value,
+              }).then((message) => alert("Message Sent Successfully"));
+            }
+          </script>
         </div>
       </div>
     </section>
