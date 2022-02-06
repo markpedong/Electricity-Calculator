@@ -26,6 +26,9 @@
 
     <!-- External Javascript -->
     <script type="module" defer src="/src/js/app.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -549,6 +552,7 @@
             />
             <input
               class="input__contact"
+              name="email"
               type="email"
               id="email"
               placeholder="Email id"
@@ -572,6 +576,7 @@
               class="input__contact"
               type="text"
               id="phone"
+              name="phone"
               placeholder="Phone no."
               required
               style="
@@ -590,8 +595,9 @@
               "
             />
             <textarea
-              class="textarea__contact"
+              class="input__contact"
               id="message"
+              name="message"
               rows="4"
               placeholder="How can I help you?"
               style="
@@ -610,6 +616,7 @@
               "
             ></textarea>
             <button
+              class="contact__button"
               style="
                 padding: 15px;
                 background-image: linear-gradient(
@@ -637,28 +644,6 @@
               Send
             </button>
           </form>
-          <script src="https://smtpjs.com/v3/smtp.js"></script>
-          <script>
-            function sendEmail() {
-              Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "portfolioEmail01@gmail.com",
-                Password: "FFF8CBF9AEFF30814FB290FFA836207DA7B3",
-                To: "mark.pedong01@gmail.com",
-                From: document.getElementById("email").value,
-                Subject: "New Contact Form Enquiry",
-                Body:
-                  "Name: " +
-                  document.getElementById("name").value +
-                  "<br> Email: " +
-                  document.getElementById("email").value +
-                  "<br> Phone no: " +
-                  document.getElementById("phone").value +
-                  "<br> Message: " +
-                  document.getElementById("message").value,
-              }).then((message) => alert("Message Sent Successfully"));
-            }
-          </script>
         </div>
       </div>
     </section>

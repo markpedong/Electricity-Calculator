@@ -3,6 +3,7 @@
 import * as navBar from "./navbarView.js";
 import { DAY_MONTH } from "./config.js";
 import { REDUCE_START } from "./config.js";
+import * as contactForm from "./contactForm.js";
 
 // Device Class
 class TotalPerDay {
