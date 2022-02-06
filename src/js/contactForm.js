@@ -1,6 +1,6 @@
 const contactBtn = document.querySelector(".contact__button");
 const inputs = document.querySelector(".contact__form");
-console.log(inputs);
+const inputContact = document.querySelectorAll(".input__contact");
 
 contactBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -19,14 +19,10 @@ contactBtn.addEventListener("click", (e) => {
       inputs.elements["phone"].value +
       "<br>" +
       inputs.elements["message"].value,
-  }).then((msg) => {
+  }).then(() => {
+    inputContact.forEach((el) => {
+      el.value = "";
+    });
     alert("The email successfully sent");
   });
-
-  //   Clear Input form
-  inputs.elements["name"].value =
-    inputs.elements["email"].value =
-    inputs.elements["phone"].value =
-    inputs.elements["message"].value =
-      "";
 });
