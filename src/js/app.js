@@ -80,6 +80,8 @@ const totalPowerCalc = document.querySelector(".total__electricity");
 const totalUsageCalc = document.querySelector(".total__usage");
 const pricePerDay = document.querySelector(".price__day");
 const pricePerMonth = document.querySelector(".price__month");
+const totalValue = document.querySelectorAll(".total__value");
+
 class App {
   #appliances = [];
   #totalDetails = [];
@@ -143,7 +145,7 @@ class App {
     }, REDUCE_START);
 
     // Rendering in Total Calculator
-    totalUsageCalc.textContent = totalUsage;
+    totalUsageCalc.innerText = totalUsage;
 
     const powerNUsage = totalPower * totalUsage;
 
@@ -201,7 +203,7 @@ class App {
     const reverseArrCost = arrCost.reverse().shift();
     const costPerDay = +reverseArrCost.totalCostPerDay;
     const costPerMonth = +reverseArrCost.totalCostPerMonth;
-    pricePerDay.textContent = `₱ ${costPerDay}`;
+    pricePerDay.textContent = `₱ ${numeral(costPerDay).format("0.00")}`;
     pricePerMonth.textContent = `${numeral(costPerMonth).format("0.00")}`;
   }
 
