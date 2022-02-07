@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/main.min.css" />
     <!-- GSAP ANIMATION -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
     <!-- External Font -->
     <link
@@ -82,13 +83,13 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Calculator</a>
+                <a class="nav-link text-white nav__calculator">Calculator</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">FAQ</a>
+                <a class="nav-link text-white nav__faq">FAQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Contact</a>
+                <a class="nav-link text-white nav__contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -116,13 +117,14 @@
       class="calculator d-grid align-items-center"
       style="
         background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+        min-height: 100vh;
       "
     >
       <!-- For Device and Appliances Form / Outer Container-->
       <div class="container py-5">
         <!-- Inner Container -->
         <div
-          class="container bg-light"
+          class="device__appliances container bg-light"
           style="border-radius: 1rem; box-shadow: 10px 10px 10px"
         >
           <div class="row row-cols-1 row-cols-lg-2">
@@ -216,7 +218,7 @@
                   </li> -->
               </ul>
             </div>
-            <div class="col p-md-5">
+            <div class="device__calculator col p-md-5">
               <div
                 class="container shadow-lg p-1 mb-5 bg-body bg-dark text-dark"
                 style="border-radius: 1.2rem"
@@ -339,14 +341,14 @@
 
     <!-- FAQ -->
     <section
-      class="d-grid justify-content-center align-items-center"
+      class="sec__faq d-grid justify-content-center align-items-center"
       style="
         background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
         height: 100vh;
       "
     >
       <div
-        class="container p-2 p-sm-5"
+        class="faq__container container p-2 p-sm-5"
         style="
           background-color: white;
           border-radius: 20px;
@@ -466,7 +468,7 @@
 
     <!-- Contact Form -->
     <section
-      class="d-grid align-items-center"
+      class="sec__contact d-grid align-items-center"
       style="
         background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
       "
@@ -475,7 +477,7 @@
       <div class="container py-5">
         <!-- Inner Container -->
         <div
-          class="container bg-light"
+          class="contact__container container bg-light"
           style="
             border-radius: 1rem;
             box-shadow: 10px 10px 10px;
