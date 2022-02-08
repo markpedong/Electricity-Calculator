@@ -152,3 +152,12 @@ $accordion-border-width: 0px;
     transform: translateX(-50px);
   }
 }
+
+.total__usage.box.horizTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 50% !important;
+}
