@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electricity Calculator | Calculate your Electricity for free!</title>
     <link rel="shortcut icon" href="./src/img/logo.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="/src/sass/main.scss" />
     <!-- GSAP ANIMATION -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
@@ -76,7 +76,10 @@
             ></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 mt-3 me-4">
+            <ul
+              class="navbar-nav justify-content-end flex-grow-1 mt-3 me-4"
+              style="cursor: pointer"
+            >
               <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" href="#"
                   >Home</a
@@ -106,9 +109,8 @@
           alt="header"
         />
         <h1 class="headline">
-          Get worry free by
-          <strong style="font-weight: 700">Calculating the cost</strong> of your
-          electricity consumption.
+          Get worry free by Calculating the cost of your electricity
+          consumption.
         </h1>
       </div>
     </section>
@@ -625,6 +627,15 @@
           </form>
         </div>
       </div>
+      <div class="container">
+        <footer class="py-3 my-4">
+          <p class="text-center text-muted">
+            &copy; 2022 Copyright by <strong>Mark Jesson Pedong</strong>. Use
+            for learning purposes, Don't claim as your own.
+          </p>
+        </footer>
+      </div>
     </section>
+    <section class="sec__footer"></section>
   </body>
 </html>

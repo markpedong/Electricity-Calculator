@@ -4,3 +4,6 @@ dist
 package-lock.json
 123.html
 css
+.firebase
+.firebaserc
+firebase

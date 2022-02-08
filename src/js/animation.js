@@ -31,7 +31,7 @@ landingTl
     header,
     1,
     { opacity: "0%", top: "20%" },
-    { opacity: "100%", top: "40%", ease: Power2.easeInOut },
+    { opacity: "100%", top: "30%", ease: Power2.easeInOut },
     "-=0.9"
   )
   .fromTo(navBrand, 0.5, { opacity: 0, x: 30 }, { opacity: 1, x: 0 }, "-=0.5")

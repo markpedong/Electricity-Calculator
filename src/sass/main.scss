@@ -26,14 +26,14 @@ $accordion-border-width: 0px;
 }
 
 .electricity-title {
-  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 .electricity-title:hover {
   opacity: 50%;
 }
 .nav-link {
-  text-shadow: 2px 2px 2px rgb(0, 0, 0);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .nav-link:hover {
   opacity: 50%;
@@ -55,7 +55,7 @@ $accordion-border-width: 0px;
     .headline {
       z-index: 3;
       position: absolute;
-      top: 40%;
+      top: 30%;
       bottom: 60%;
       left: 25%;
       right: 25%;
